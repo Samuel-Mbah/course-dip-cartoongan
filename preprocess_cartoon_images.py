@@ -52,5 +52,5 @@ def preprocess_images(input_dir, output_dir, size=(256, 256)):
 
 # Example usage:
 input_dir = 'Cartoon_data/cartoon_images'
-output_dir = 'Cartoon_Data/cartoon_images_preprocessed'
+output_dir = 'Cartoon_data/cartoon_images_preprocessed'
 preprocess_images(input_dir, output_dir)

@@ -1,9 +1,17 @@
+import os
+import sys
 import flickrapi
-import json
 
-# Replace with your Flickr API key and secret
-api_key = '2427bb7be0b977d4a50d81ef5e93244e'
-api_secret = '5cec8915fd62cb4c'
+# Set FLICKR_API_KEY and FLICKR_API_SECRET as environment variables before running
+api_key = os.environ.get('FLICKR_API_KEY')
+api_secret = os.environ.get('FLICKR_API_SECRET')
+
+if not api_key or not api_secret:
+    sys.exit(
+        "Error: FLICKR_API_KEY and FLICKR_API_SECRET environment variables must be set.\n"
+        "  export FLICKR_API_KEY=your_api_key\n"
+        "  export FLICKR_API_SECRET=your_api_secret"
+    )
 
 flickr = flickrapi.FlickrAPI(api_key, api_secret, format='parsed-json')
 
@@ -31,7 +39,7 @@ def fetch_photo_urls(tags, max_photos):
     return urls[:max_photos]
 
 # Fetch photo URLs (e.g., with the tag 'nature')
-photo_urls = fetch_photo_urls(tags='nature, city, landscape, sports, house,',  max_photos=6500)
+photo_urls = fetch_photo_urls(tags='nature, city, landscape, sports, house', max_photos=6500)
 
 # Save URLs to image_urls.txt
 with open('image_urls.txt', 'w') as file:
