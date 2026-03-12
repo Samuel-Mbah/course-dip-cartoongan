@@ -12,7 +12,7 @@ def extract_frames(video_path, output_dir, interval=1):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    ffmpeg_path = 'C:/PATH_programs/ffmpeg.exe'  # Update this to your ffmpeg path if not in PATH
+    ffmpeg_path = os.environ.get('FFMPEG_PATH', 'ffmpeg')  # Set FFMPEG_PATH env var if ffmpeg is not on PATH
 
     command = [
         ffmpeg_path,
