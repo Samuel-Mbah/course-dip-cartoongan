@@ -1,6 +1,5 @@
 # CartoonGAN — Photo Cartoonisation with Generative Adversarial Networks
 
-> **Suggested repository name:** `cartoongan` or `real2cartoon`
 
 A PyTorch implementation of a GAN-based system that transforms real-world photographs into anime-style cartoon images, inspired by the styles of directors such as Makoto Shinkai, Mamoru Hosoda, and Miyazaki Hayao.
 
